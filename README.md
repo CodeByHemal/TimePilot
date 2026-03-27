@@ -147,7 +147,7 @@ Must provide strong visual indicators (e.g., colors, labels, highlights) to dist
 ## 🛠️ Tech Stack
 
 * **Android (Java)**
-* **Firebase** (Authentication, Firestore, Storage)
+* **Sqlite (Database)**
 * **XML** for UI Design
 
 ---
