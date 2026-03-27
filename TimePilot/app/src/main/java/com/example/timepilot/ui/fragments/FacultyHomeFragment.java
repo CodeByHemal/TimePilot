@@ -31,7 +31,14 @@ public class FacultyHomeFragment extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        // Set up click listeners, dynamic data binding, etc.
+        
+        // Handle Add Student FAB click
+        binding.fabAddStudent.setOnClickListener(v -> {
+            if (getActivity() instanceof com.example.timepilot.ui.main.faculty.FacultyActivity) {
+                ((com.example.timepilot.ui.main.faculty.FacultyActivity) getActivity())
+                        .loadFragment(new RegisterStudentFragment(), true);
+            }
+        });
     }
 
     @Override

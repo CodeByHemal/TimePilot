@@ -65,9 +65,6 @@ public class MainActivity extends AppCompatActivity {
         });
     }
 
-    /**
-     * Swap the currently displayed fragment.
-     */
     private void loadFragment(Fragment fragment) {
         getSupportFragmentManager()
                 .beginTransaction()

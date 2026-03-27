@@ -309,4 +309,20 @@
 
     <!-- Action Button -->
     <string name="post_schedule_btn">Post Schedule</string>
+
+    <!-- ========== Faculty — Register Student Page ========== -->
+    <string name="register_student_label">STUDENT REGISTRATION</string>
+    <string name="register_student_title">New Enrollment</string>
+    <string name="register_student_subtitle">Register a new scholar to the database and assign their initial academic credentials.</string>
+    <string name="student_name_label">Full Name</string>
+    <string name="student_name_hint">e.g. Alex Rivera</string>
+    <string name="student_email_label">Email Address</string>
+    <string name="student_email_hint">scholar@university.edu</string>
+    <string name="student_roll_label">Roll Number</string>
+    <string name="student_roll_hint">e.g. 2024-CS-142</string>
+    <string name="student_password_label">Account Password</string>
+    <string name="student_password_hint">Minimum 8 characters</string>
+    <string name="register_btn_text">Register Student</string>
+    <string name="registration_success">Student successfully registered in the system.</string>
+    <string name="add_student_fab_desc">Add new student</string>
 </resources>

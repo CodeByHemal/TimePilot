@@ -67,10 +67,19 @@ public class FacultyActivity extends AppCompatActivity {
     /**
      * Swap the currently displayed fragment in the faculty container.
      */
-    private void loadFragment(Fragment fragment) {
-        getSupportFragmentManager()
+    public void loadFragment(Fragment fragment, boolean addToBackStack) {
+        androidx.fragment.app.FragmentTransaction transaction = getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.facultyFragmentContainer, fragment)
-                .commit();
+                .replace(R.id.facultyFragmentContainer, fragment);
+        
+        if (addToBackStack) {
+            transaction.addToBackStack(null);
+        }
+        
+        transaction.commit();
+    }
+
+    private void loadFragment(Fragment fragment) {
+        loadFragment(fragment, false);
     }
 }
