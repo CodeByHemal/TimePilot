@@ -1,0 +1,803 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/homeScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_xl"
+        android:paddingEnd="@dimen/spacing_xl"
+        android:paddingBottom="@dimen/spacing_xxl">
+
+        <!-- ===================================================== -->
+        <!-- TOP BAR — Avatar  |  App Name + Welcome  |  Bell      -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:id="@+id/topBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- User Avatar using ShapeableImageView (Material3) -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_avatar"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/purple_light"
+                app:strokeWidth="2dp" />
+
+            <!-- App name & welcome text -->
+            <LinearLayout
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_weight="1"
+                android:orientation="vertical">
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvAppName"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/app_name"
+                    android:textColor="@color/purple_primary"
+                    android:textSize="14sp"
+                    android:textStyle="bold" />
+
+                <com.google.android.material.textview.MaterialTextView
+                    android:id="@+id/tvWelcome"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/welcome_message"
+                    android:textColor="@color/text_secondary"
+                    android:textSize="@dimen/text_body" />
+
+            </LinearLayout>
+
+            <!-- Notification Bell icon (Material3 IconButton) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnNotification"
+                style="@style/Widget.Material3.Button.IconButton"
+                android:layout_width="48dp"
+                android:layout_height="48dp"
+                android:contentDescription="@string/alert"
+                app:icon="@drawable/ic_notification"
+                app:iconSize="22dp"
+                app:iconTint="@color/text_primary" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- HERO SECTION — "Today's  Momentum."                   -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:id="@+id/heroSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHeroTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/todays_label"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_title_hero"
+                android:textStyle="bold" />
+
+            <!-- "Momentum." with underline -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvHeroMomentum"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="-4dp"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/momentum"
+                android:textColor="@color/purple_primary"
+                android:textSize="@dimen/text_title_hero"
+                android:textStyle="bold|italic" />
+
+            <!-- Purple underline accent  -->
+            <View
+                android:id="@+id/heroUnderline"
+                android:layout_width="170dp"
+                android:layout_height="3dp"
+                android:layout_marginTop="2dp"
+                android:background="@color/purple_primary" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- FACULTY PORTAL REDIRECT BUTTON                         -->
+        <!-- ===================================================== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnFacultyPortal"
+            style="@style/Widget.Material3.Button.OutlinedButton"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:text="@string/open_faculty_portal"
+            android:textColor="@color/purple_primary"
+            android:textSize="@dimen/text_body"
+            android:textStyle="bold"
+            app:cornerRadius="@dimen/radius_sm"
+            app:icon="@drawable/ic_faculty_portal"
+            app:iconGravity="textStart"
+            app:iconSize="20dp"
+            app:iconTint="@color/purple_primary"
+            app:rippleColor="@color/purple_light"
+            app:strokeColor="@color/purple_primary"
+            app:strokeWidth="1dp" />
+
+        <!-- ===================================================== -->
+        <!-- TODAY'S SCHEDULE HEADER                               -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:id="@+id/scheduleHeaderLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScheduleTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/todays_schedule"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_section_title"
+                android:textStyle="bold" />
+
+            <!-- "View Calendar" text button (Material3) -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnViewCalendar"
+                style="@style/Widget.Material3.Button.TextButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:minHeight="0dp"
+                android:text="@string/view_calendar"
+                android:textColor="@color/purple_primary"
+                android:textSize="@dimen/text_body"
+                app:rippleColor="@color/purple_light" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- SCHEDULE CARDS — Horizontal scroll                    -->
+        <!-- ===================================================== -->
+        <HorizontalScrollView
+            android:id="@+id/scheduleScrollView"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            android:clipToPadding="false"
+            android:overScrollMode="never"
+            android:scrollbars="none">
+
+            <LinearLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:paddingBottom="20dp"
+                android:orientation="horizontal">
+
+                <!-- ── CARD 1: ONGOING ────────────────────────── -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSchedule1"
+                    android:layout_width="@dimen/schedule_card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    app:cardBackgroundColor="@color/purple_surface"
+                    app:cardCornerRadius="@dimen/radius_lg"
+                    app:cardElevation="0dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_lg">
+
+                        <!-- Badge row: ONGOING + Icon -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- ONGOING Chip (Material3 Chip) -->
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipOngoing"
+                                style="@style/Widget.Material3.Chip.Assist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="@string/ongoing"
+                                android:textColor="@color/purple_primary"
+                                android:textSize="@dimen/text_badge"
+                                android:textStyle="bold"
+                                app:chipBackgroundColor="@color/purple_light"
+                                app:chipCornerRadius="@dimen/radius_sm"
+                                app:chipMinHeight="24dp"
+                                app:chipMinTouchTargetSize="0dp"
+                                app:chipStrokeWidth="0dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                            <ImageView
+                                android:id="@+id/icSchedule1"
+                                android:layout_width="24dp"
+                                android:layout_height="24dp"
+                                android:src="@drawable/ic_school"
+                                android:contentDescription="@string/class_name_1"
+                                app:tint="@color/purple_primary" />
+
+                        </LinearLayout>
+
+                        <!-- Time -->
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSchedule1Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_md"
+                            android:text="@string/class_time_1"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                        <!-- Class Name -->
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSchedule1Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:text="@string/class_name_1"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_card_title"
+                            android:textStyle="bold" />
+
+                        <!-- Location row -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/ic_location"
+                                android:contentDescription="@string/location" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvSchedule1Location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_xs"
+                                android:text="@string/location_1"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_body" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+                <!-- ── CARD 2: NEXT ───────────────────────────── -->
+                <com.google.android.material.card.MaterialCardView
+                    android:id="@+id/cardSchedule2"
+                    android:layout_width="@dimen/schedule_card_width"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/spacing_md"
+                    app:cardBackgroundColor="@color/bg_card"
+                    app:cardCornerRadius="@dimen/radius_lg"
+                    app:cardElevation="2dp"
+                    app:strokeWidth="0dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="vertical"
+                        android:padding="@dimen/spacing_lg">
+
+                        <!-- Badge row: NEXT -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <!-- NEXT Chip (Material3 outlined) -->
+                            <com.google.android.material.chip.Chip
+                                android:id="@+id/chipNext"
+                                style="@style/Widget.Material3.Chip.Assist"
+                                android:layout_width="wrap_content"
+                                android:layout_height="32dp"
+                                android:text="@string/next"
+                                android:textColor="@color/purple_primary"
+                                android:textSize="@dimen/text_badge"
+                                android:textStyle="bold"
+                                app:chipBackgroundColor="@android:color/transparent"
+                                app:chipCornerRadius="@dimen/radius_sm"
+                                app:chipMinHeight="24dp"
+                                app:chipMinTouchTargetSize="0dp"
+                                app:chipStrokeColor="@color/purple_primary"
+                                app:chipStrokeWidth="1dp" />
+
+                            <View
+                                android:layout_width="0dp"
+                                android:layout_height="0dp"
+                                android:layout_weight="1" />
+
+                        </LinearLayout>
+
+                        <!-- Time -->
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSchedule2Time"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_md"
+                            android:text="@string/class_time_2"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                        <!-- Class Name -->
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSchedule2Name"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:ellipsize="end"
+                            android:maxLines="1"
+                            android:text="@string/class_name_2"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_card_title"
+                            android:textStyle="bold" />
+
+                        <!-- Location row -->
+                        <LinearLayout
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_sm"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <ImageView
+                                android:layout_width="14dp"
+                                android:layout_height="14dp"
+                                android:src="@drawable/ic_location"
+                                android:contentDescription="@string/location" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvSchedule2Location"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_xs"
+                                android:text="@string/location_2"
+                                android:textColor="@color/text_secondary"
+                                android:textSize="@dimen/text_body" />
+
+                        </LinearLayout>
+
+                    </LinearLayout>
+
+                </com.google.android.material.card.MaterialCardView>
+
+            </LinearLayout>
+
+        </HorizontalScrollView>
+
+        <!-- ===================================================== -->
+        <!-- URGENT TASKS SECTION                                  -->
+        <!-- ===================================================== -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvUrgentTasksTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            android:text="@string/urgent_tasks"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_section_title"
+            android:textStyle="bold" />
+
+        <!-- ── URGENT TASK 1 — Red accent ─────────────────────── -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTask1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_md"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Red left accent bar -->
+                <View
+                    android:id="@+id/task1AccentBar"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/urgent_red" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Title + Progress % row -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTask1Name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/task_1_name"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_card_title"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTask1Progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_1_progress"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                    </LinearLayout>
+
+                    <!-- Due label with clock icon -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <ImageView
+                            android:layout_width="14dp"
+                            android:layout_height="14dp"
+                            android:src="@drawable/ic_clock"
+                            android:contentDescription="@string/alert" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTask1Due"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_xs"
+                            android:text="@string/task_1_due"
+                            android:textColor="@color/urgent_red"
+                            android:textSize="@dimen/text_caption"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <!-- Progress Bar (Material3 LinearProgressIndicator) -->
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressTask1"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:progress="85"
+                        app:indicatorColor="@color/urgent_red"
+                        app:trackColor="@color/progress_track"
+                        app:trackCornerRadius="4dp"
+                        app:trackThickness="@dimen/progress_height" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ── TASK 2 — Normal ────────────────────────────────── -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardTask2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_md"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Purple left accent bar -->
+                <View
+                    android:id="@+id/task2AccentBar"
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="@color/purple_primary" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- Title + Progress % -->
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTask2Name"
+                            android:layout_width="0dp"
+                            android:layout_height="wrap_content"
+                            android:layout_weight="1"
+                            android:text="@string/task_2_name"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_card_title"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvTask2Progress"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/task_2_progress"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                    </LinearLayout>
+
+                    <!-- Due label -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvTask2Due"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/task_2_due"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_caption" />
+
+                    <!-- Progress Bar (Material3 LinearProgressIndicator) -->
+                    <com.google.android.material.progressindicator.LinearProgressIndicator
+                        android:id="@+id/progressTask2"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:progress="30"
+                        app:indicatorColor="@color/purple_primary"
+                        app:trackColor="@color/progress_track"
+                        app:trackCornerRadius="4dp"
+                        app:trackThickness="@dimen/progress_height" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================================================== -->
+        <!-- RECENT NOTICES SECTION                                -->
+        <!-- ===================================================== -->
+        <com.google.android.material.textview.MaterialTextView
+            android:id="@+id/tvRecentNoticesTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            android:text="@string/recent_notices"
+            android:textColor="@color/text_primary"
+            android:textSize="@dimen/text_section_title"
+            android:textStyle="bold" />
+
+        <!-- Notices container card -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardNotices"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_md"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_lg">
+
+                <!-- ── Notice 1 ──────────────────────────────── -->
+                <LinearLayout
+                    android:id="@+id/notice1Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Circle icon bg -->
+                    <FrameLayout
+                        android:layout_width="@dimen/notice_icon_size"
+                        android:layout_height="@dimen/notice_icon_size"
+                        android:background="@drawable/bg_notice_icon_circle">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_wifi"
+                            android:contentDescription="@string/faculty" />
+
+                    </FrameLayout>
+
+                    <!-- Text content -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Title + time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvNotice1Title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/notice_1_title"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_card_title"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvNotice1Time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_sm"
+                                android:text="@string/notice_1_time"
+                                android:textColor="@color/text_hint"
+                                android:textSize="@dimen/text_caption" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNotice1Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/notice_1_content"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+                <!-- Divider (Material3 MaterialDivider) -->
+                <com.google.android.material.divider.MaterialDivider
+                    android:id="@+id/noticeDivider"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:layout_marginBottom="@dimen/spacing_lg"
+                    app:dividerColor="@color/divider" />
+
+                <!-- ── Notice 2 ──────────────────────────────── -->
+                <LinearLayout
+                    android:id="@+id/notice2Layout"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <!-- Circle icon bg -->
+                    <FrameLayout
+                        android:layout_width="@dimen/notice_icon_size"
+                        android:layout_height="@dimen/notice_icon_size"
+                        android:background="@drawable/bg_notice_icon_circle">
+
+                        <ImageView
+                            android:layout_width="20dp"
+                            android:layout_height="20dp"
+                            android:layout_gravity="center"
+                            android:src="@drawable/ic_event"
+                            android:contentDescription="@string/events" />
+
+                    </FrameLayout>
+
+                    <!-- Text content -->
+                    <LinearLayout
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_md"
+                        android:layout_weight="1"
+                        android:orientation="vertical">
+
+                        <!-- Title + time -->
+                        <LinearLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:gravity="center_vertical"
+                            android:orientation="horizontal">
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvNotice2Title"
+                                android:layout_width="0dp"
+                                android:layout_height="wrap_content"
+                                android:layout_weight="1"
+                                android:ellipsize="end"
+                                android:maxLines="1"
+                                android:text="@string/notice_2_title"
+                                android:textColor="@color/text_primary"
+                                android:textSize="@dimen/text_card_title"
+                                android:textStyle="bold" />
+
+                            <com.google.android.material.textview.MaterialTextView
+                                android:id="@+id/tvNotice2Time"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/spacing_sm"
+                                android:text="@string/notice_2_time"
+                                android:textColor="@color/text_hint"
+                                android:textSize="@dimen/text_caption" />
+
+                        </LinearLayout>
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvNotice2Content"
+                            android:layout_width="match_parent"
+                            android:layout_height="wrap_content"
+                            android:layout_marginTop="@dimen/spacing_xs"
+                            android:ellipsize="end"
+                            android:maxLines="2"
+                            android:text="@string/notice_2_content"
+                            android:textColor="@color/text_secondary"
+                            android:textSize="@dimen/text_body" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

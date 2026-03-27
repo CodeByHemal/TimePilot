@@ -2,4 +2,161 @@
 <resources>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+
+    <!-- Primary Purple Palette -->
+    <color name="purple_primary">#6C3CE1</color>
+    <color name="purple_dark">#4A1DB8</color>
+    <color name="purple_light">#EDE7FB</color>
+    <color name="purple_surface">#F5F0FF</color>
+
+    <!-- Background & Surface -->
+    <color name="bg_main">#FAF7FF</color>
+    <color name="bg_card">#FFFFFF</color>
+    <color name="bg_card_elevated">#FDFBFF</color>
+
+    <!-- Text Colors -->
+    <color name="text_primary">#1A1A2E</color>
+    <color name="text_secondary">#6B7280</color>
+    <color name="text_hint">#9CA3AF</color>
+
+    <!-- Status Colors -->
+    <color name="status_ongoing_bg">#EDE7FB</color>
+    <color name="status_ongoing_text">#6C3CE1</color>
+    <color name="status_next_bg">#F3F0FF</color>
+    <color name="status_next_text">#6C3CE1</color>
+
+    <!-- Urgent / Alert -->
+    <color name="urgent_red">#DC2626</color>
+    <color name="urgent_red_light">#FEE2E2</color>
+    <color name="urgent_red_bg">#FFF5F5</color>
+
+    <!-- Progress -->
+    <color name="progress_track">#E5E7EB</color>
+    <color name="progress_purple">#6C3CE1</color>
+    <color name="progress_red">#DC2626</color>
+
+    <!-- Notice icon backgrounds -->
+    <color name="notice_icon_bg_1">#EDE7FB</color>
+    <color name="notice_icon_bg_2">#F3F0FF</color>
+
+    <!-- Bottom Nav -->
+    <color name="nav_active">#6C3CE1</color>
+    <color name="nav_inactive">#9CA3AF</color>
+
+    <!-- Divider -->
+    <color name="divider">#F3F4F6</color>
+
+    <!-- Scholarly Atelier brand -->
+    <color name="brand_text">#6C3CE1</color>
+
+    <!-- Task Board Page -->
+    <color name="grade_badge_bg">#E8F5E9</color>
+    <color name="grade_badge_text">#2E7D32</color>
+    <color name="grade_badge_border">#4CAF50</color>
+    <color name="milestone_done">#7C3AED</color>
+    <color name="milestone_unchecked">#D1D5DB</color>
+    <color name="milestone_text_done">#9CA3AF</color>
+    <color name="chip_selected_bg">#1A1A2E</color>
+    <color name="chip_selected_text">#FFFFFF</color>
+    <color name="chip_unselected_bg">#F3F4F6</color>
+    <color name="chip_unselected_text">#6B7280</color>
+    <color name="health_bar_bg">#EDE7FB</color>
+    <color name="health_bar_purple_gradient_start">#B794F4</color>
+    <color name="health_bar_purple_gradient_end">#E9D5FF</color>
+    <color name="team_badge_bg">#F5F0FF</color>
+    <color name="team_badge_text">#6C3CE1</color>
+    <color name="priority_dot_high">#DC2626</color>
+    <color name="strikethrough_text">#D1D5DB</color>
+
+    <!-- Notices / Daily Briefing Page -->
+    <color name="notice_card_bg">#FFFFFF</color>
+    <color name="notice_image_bg">#1A1A2E</color>
+    <color name="notice_image_lines">#6C3CE1</color>
+    <color name="notice_avatar_bg">#6C3CE1</color>
+    <color name="notice_avatar_icon">#FFFFFF</color>
+    <color name="chip_event_bg">#F3F4F6</color>
+    <color name="chip_event_text">#374151</color>
+    <color name="chip_urgent_bg">#FEE2E2</color>
+    <color name="chip_urgent_text">#DC2626</color>
+    <color name="notice_time_text">#9CA3AF</color>
+
+    <!-- Timetable / Weekly Itinerary Page -->
+    <color name="day_selected_bg">#6C3CE1</color>
+    <color name="day_selected_text">#FFFFFF</color>
+    <color name="day_unselected_bg">#F3F4F6</color>
+    <color name="day_unselected_text">#6B7280</color>
+    <color name="day_label_text">#9CA3AF</color>
+    <color name="chip_core_bg">#F5F0FF</color>
+    <color name="chip_core_text">#6C3CE1</color>
+    <color name="chip_elective_bg">#F3F4F6</color>
+    <color name="chip_elective_text">#374151</color>
+    <color name="chip_seminar_bg">#FEF3C7</color>
+    <color name="chip_seminar_text">#92400E</color>
+    <color name="class_time_text">#6B7280</color>
+    <color name="recess_text">#9CA3AF</color>
+    <color name="recess_divider">#E5E7EB</color>
+    <color name="icon_button_bg">#F3F4F6</color>
+
+    <!-- ========== Faculty Dashboard ========== -->
+    <color name="faculty_metrics_bg_start">#8B5CF6</color>
+    <color name="faculty_metrics_bg_end">#6C3CE1</color>
+    <color name="faculty_metrics_surface">#F5F0FF</color>
+    <color name="faculty_metrics_text">#FFFFFF</color>
+    <color name="faculty_metrics_label">#D4BFFF</color>
+    <color name="faculty_pending_badge_bg">#6C3CE1</color>
+    <color name="faculty_pending_badge_text">#FFFFFF</color>
+    <color name="faculty_task_accent">#6C3CE1</color>
+    <color name="faculty_chevron">#D1D5DB</color>
+    <color name="faculty_broadcast_avatar_bg">#6C3CE1</color>
+    <color name="faculty_broadcast_chip_bg">#EDE7FB</color>
+    <color name="faculty_broadcast_chip_text">#6C3CE1</color>
+    <color name="faculty_subject_circle_bg">#FFFFFF</color>
+    <color name="faculty_subject_circle_bg_alpha">#33FFFFFF</color>
+    <color name="faculty_fab_bg">#6C3CE1</color>
+    <color name="faculty_fab_icon">#FFFFFF</color>
+
+    <!-- Faculty — Create New Task Page -->
+    <color name="faculty_form_surface">#F5F0FF</color>
+    <color name="priority_high_bg">#FEE2E2</color>
+    <color name="priority_high_text">#DC2626</color>
+    <color name="priority_medium_bg">#EDE7FB</color>
+    <color name="priority_medium_text">#6C3CE1</color>
+    <color name="priority_low_bg">#F3F4F6</color>
+    <color name="priority_low_text">#6B7280</color>
+    <color name="subtask_badge_bg">#EDE7FB</color>
+    <color name="subtask_badge_text">#6C3CE1</color>
+    <color name="subtask_checkbox_done">#6C3CE1</color>
+    <color name="subtask_checkbox_undone">#D1D5DB</color>
+    <color name="assign_btn_bg">#6C3CE1</color>
+    <color name="assign_btn_text">#FFFFFF</color>
+
+    <!-- Faculty — Broadcast New Notice Page -->
+    <color name="broadcast_upload_bg">#F9FAFB</color>
+    <color name="broadcast_upload_border">#E5E7EB</color>
+    <color name="broadcast_upload_icon">#9CA3AF</color>
+    <color name="broadcast_target_surface">#F5F0FF</color>
+    <color name="broadcast_impact_bg_start">#7C3AED</color>
+    <color name="broadcast_impact_bg_end">#6C3CE1</color>
+    <color name="broadcast_impact_text">#FFFFFF</color>
+    <color name="broadcast_impact_label">#D4BFFF</color>
+    <color name="broadcast_progress_track">#4DFFFFFF</color>
+    <color name="broadcast_progress_fill">#FFFFFF</color>
+    <color name="broadcast_btn_bg">#6C3CE1</color>
+    <color name="broadcast_btn_text">#FFFFFF</color>
+    <color name="broadcast_legal_text">#9CA3AF</color>
+
+    <!-- Faculty — Schedule Builder Page -->
+    <color name="sched_info_bg">#F0EBFF</color>
+    <color name="sched_info_icon">#6C3CE1</color>
+    <color name="sched_info_text">#6B7280</color>
+    <color name="sched_day_active_bg">#6C3CE1</color>
+    <color name="sched_day_active_text">#FFFFFF</color>
+    <color name="sched_day_inactive_bg">#F3F4F6</color>
+    <color name="sched_day_inactive_text">#9CA3AF</color>
+    <color name="sched_card_left_accent">#6C3CE1</color>
+    <color name="sched_label_text">#9CA3AF</color>
+    <color name="sched_add_btn_bg">#EDE7FB</color>
+    <color name="sched_add_btn_text">#6C3CE1</color>
+    <color name="sched_post_btn_bg">#6C3CE1</color>
+    <color name="sched_post_btn_text">#FFFFFF</color>
 </resources>

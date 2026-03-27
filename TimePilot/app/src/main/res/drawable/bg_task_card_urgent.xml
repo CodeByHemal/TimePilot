@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Card background -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/bg_card" />
+            <corners android:radius="16dp" />
+        </shape>
+    </item>
+    <!-- Left accent border -->
+    <item
+        android:width="4dp"
+        android:gravity="start|fill_vertical">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/urgent_red" />
+            <corners
+                android:topLeftRadius="16dp"
+                android:bottomLeftRadius="16dp" />
+        </shape>
+    </item>
+</layer-list>

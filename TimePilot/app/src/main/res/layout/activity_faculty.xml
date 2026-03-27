@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.coordinatorlayout.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/facultyMain"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bg_main"
+    android:fitsSystemWindows="true"
+    tools:context=".ui.main.faculty.FacultyActivity">
+
+    <!-- Fragment container — faculty fragments swap here -->
+    <androidx.fragment.app.FragmentContainerView
+        android:id="@+id/facultyFragmentContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginBottom="80dp" />
+    <!-- ============================================================ -->
+    <!-- FACULTY BOTTOM NAVIGATION BAR (Material3)                    -->
+    <!-- ============================================================ -->
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/facultyBottomNavigation"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_gravity="bottom"
+        android:background="@color/bg_card"
+        app:elevation="8dp"
+        app:itemActiveIndicatorStyle="@style/Widget.Material3.BottomNavigationView.ActiveIndicator"
+        app:itemIconTint="@color/bottom_nav_item_color"
+        app:itemTextColor="@color/bottom_nav_item_color"
+        app:labelVisibilityMode="labeled"
+        app:menu="@menu/faculty_bottom_nav_menu" />
+
+</androidx.coordinatorlayout.widget.CoordinatorLayout>

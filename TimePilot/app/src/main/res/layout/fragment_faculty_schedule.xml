@@ -1,0 +1,802 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/scheduleBuilderScrollView"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:clipToPadding="false"
+    android:fillViewport="true"
+    android:overScrollMode="never"
+    android:scrollbars="none"
+    android:paddingBottom="10dp">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingStart="@dimen/spacing_xl"
+        android:paddingEnd="@dimen/spacing_xl"
+        android:paddingBottom="@dimen/spacing_xxl">
+
+        <!-- ===================================================== -->
+        <!-- TOP BAR — Avatar | "The Scholarly Atelier"             -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:id="@+id/topBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <!-- Avatar -->
+            <com.google.android.material.imageview.ShapeableImageView
+                android:id="@+id/imgAvatar"
+                android:layout_width="@dimen/avatar_size"
+                android:layout_height="@dimen/avatar_size"
+                android:scaleType="centerCrop"
+                android:src="@drawable/user_avatar"
+                app:shapeAppearanceOverlay="@style/ShapeAppearance.Material3.Corner.Full"
+                app:strokeColor="@color/purple_light"
+                app:strokeWidth="2dp" />
+
+            <!-- Brand name -->
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvBrandName"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/spacing_md"
+                android:layout_weight="1"
+                android:text="@string/the_scholarly_atelier"
+                android:textColor="@color/brand_text"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- HERO — "ADMINISTRATIVE PORTAL"                         -->
+        <!--        "Faculty Schedule" + "Builder" (purple italic)  -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:id="@+id/heroSection"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            android:orientation="vertical">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvAdminLabel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/admin_portal_label"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_caption"
+                android:textStyle="bold"
+                android:letterSpacing="0.08" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScheduleHeroLine1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/schedule_hero_line1"
+                android:textColor="@color/text_primary"
+                android:textSize="32sp"
+                android:textStyle="bold"
+                android:lineSpacingExtra="-4dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScheduleHeroLine2"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:fontFamily="sans-serif-black"
+                android:text="@string/schedule_hero_line2"
+                android:textColor="@color/purple_primary"
+                android:textSize="32sp"
+                android:textStyle="bold|italic"
+                android:lineSpacingExtra="-4dp" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvScheduleSubtitle"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_sm"
+                android:text="@string/schedule_hero_subtitle"
+                android:textColor="@color/text_secondary"
+                android:textSize="@dimen/text_body"
+                android:lineSpacingExtra="3dp" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- GLOBAL PARAMETERS CARD                                 -->
+        <!-- ===================================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardGlobalParams"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_xxl"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_lg"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:padding="@dimen/spacing_xl">
+
+                <!-- ⚙ Global Parameters header -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="22dp"
+                        android:layout_height="22dp"
+                        android:src="@drawable/ic_settings"
+                        android:contentDescription="@string/global_parameters_title" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvGlobalParamsTitle"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:text="@string/global_parameters_title"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_section_title"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <!-- Semester Span -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/semester_span_label"
+                    android:textColor="@color/sched_label_text"
+                    android:textSize="@dimen/text_body" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilSemester"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    app:boxBackgroundColor="@color/bg_main"
+                    app:boxCornerRadiusTopStart="@dimen/radius_sm"
+                    app:boxCornerRadiusTopEnd="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomStart="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomEnd="@dimen/radius_sm"
+                    app:hintEnabled="false"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:boxStrokeColor="@color/purple_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etSemester"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/semester_span_hint"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Daily Start Time -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/daily_start_time_label"
+                    android:textColor="@color/sched_label_text"
+                    android:textSize="@dimen/text_body" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilStartTime"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    app:boxBackgroundColor="@color/bg_main"
+                    app:boxCornerRadiusTopStart="@dimen/radius_sm"
+                    app:boxCornerRadiusTopEnd="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomStart="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomEnd="@dimen/radius_sm"
+                    app:hintEnabled="false"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:boxStrokeColor="@color/purple_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etStartTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/daily_start_time_hint"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- Daily End Time -->
+                <com.google.android.material.textview.MaterialTextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:text="@string/daily_end_time_label"
+                    android:textColor="@color/sched_label_text"
+                    android:textSize="@dimen/text_body" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/tilEndTime"
+                    style="@style/Widget.Material3.TextInputLayout.FilledBox"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_xs"
+                    app:boxBackgroundColor="@color/bg_main"
+                    app:boxCornerRadiusTopStart="@dimen/radius_sm"
+                    app:boxCornerRadiusTopEnd="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomStart="@dimen/radius_sm"
+                    app:boxCornerRadiusBottomEnd="@dimen/radius_sm"
+                    app:hintEnabled="false"
+                    app:boxStrokeWidth="0dp"
+                    app:boxStrokeWidthFocused="1dp"
+                    app:boxStrokeColor="@color/purple_primary">
+
+                    <com.google.android.material.textfield.TextInputEditText
+                        android:id="@+id/etEndTime"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/daily_end_time_hint"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_body" />
+
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <!-- ℹ Info callout box -->
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_lg"
+                    android:background="@drawable/bg_sched_info_box"
+                    android:gravity="center_vertical"
+                    android:orientation="horizontal"
+                    android:padding="@dimen/spacing_md">
+
+                    <ImageView
+                        android:layout_width="18dp"
+                        android:layout_height="18dp"
+                        android:src="@drawable/ic_info"
+                        android:contentDescription="@string/global_params_info" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvInfoText"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/spacing_sm"
+                        android:layout_weight="1"
+                        android:text="@string/global_params_info"
+                        android:textColor="@color/sched_info_text"
+                        android:textSize="@dimen/text_caption"
+                        android:lineSpacingExtra="2dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================================================== -->
+        <!-- SUBJECT ROSTER HEADER                                  -->
+        <!-- ===================================================== -->
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="28dp"
+            android:gravity="center_vertical"
+            android:orientation="horizontal">
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/tvSubjectRosterTitle"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/subject_roster_title"
+                android:textColor="@color/text_primary"
+                android:textSize="@dimen/text_section_title"
+                android:textStyle="bold"
+                android:lineSpacingExtra="2dp" />
+
+            <!-- + Add Subject button -->
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/btnAddSubject"
+                style="@style/Widget.Material3.Button.TonalButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/add_subject_btn"
+                android:textColor="@color/sched_add_btn_text"
+                android:textSize="@dimen/text_caption"
+                android:textStyle="bold"
+                app:backgroundTint="@color/sched_add_btn_bg"
+                app:cornerRadius="@dimen/radius_sm"
+                app:icon="@drawable/ic_add"
+                app:iconSize="16dp"
+                app:iconTint="@color/sched_add_btn_text"
+                app:iconGravity="top" />
+
+        </LinearLayout>
+
+        <!-- ===================================================== -->
+        <!-- SUBJECT CARD 1 — Advanced Typography II                -->
+        <!-- ===================================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSubject1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_md"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_lg"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <!-- Purple left accent bar -->
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_sched_card_accent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <!-- SUBJECT NAME label + value -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sched_subject_name_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSubject1Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/sched_subject_1_name"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_card_title"
+                        android:textStyle="bold" />
+
+                    <!-- ASSIGNED FACULTY & ROOM -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_assigned_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSubject1Faculty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/sched_subject_1_faculty"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_body" />
+
+                    <!-- SCHEDULE DAYS -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_days_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <!-- Day circles row: M(active) T W(active) T F -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <!-- M — active -->
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_m"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <!-- T — inactive -->
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_inactive">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_t"
+                                android:textColor="@color/sched_day_inactive_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <!-- W — active -->
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_w"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <!-- T — inactive -->
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_inactive">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_th"
+                                android:textColor="@color/sched_day_inactive_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <!-- F — inactive -->
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_inactive">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_f"
+                                android:textColor="@color/sched_day_inactive_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <!-- TIME SLOT -->
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_time_slot_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubject1Start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sched_subject_1_start"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_body"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_lg"
+                            android:layout_marginEnd="@dimen/spacing_lg"
+                            android:text="@string/sched_to"
+                            android:textColor="@color/text_hint"
+                            android:textSize="@dimen/text_body" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubject1End"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sched_subject_1_end"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_body"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================================================== -->
+        <!-- SUBJECT CARD 2 — Computational Aesthetics              -->
+        <!-- ===================================================== -->
+        <com.google.android.material.card.MaterialCardView
+            android:id="@+id/cardSubject2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="@dimen/spacing_lg"
+            app:cardBackgroundColor="@color/bg_card"
+            app:cardCornerRadius="@dimen/radius_lg"
+            app:cardElevation="2dp"
+            app:strokeWidth="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="4dp"
+                    android:layout_height="match_parent"
+                    android:background="@drawable/bg_sched_card_accent" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="@dimen/spacing_lg">
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sched_subject_name_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSubject2Name"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/sched_subject_2_name"
+                        android:textColor="@color/text_primary"
+                        android:textSize="@dimen/text_card_title"
+                        android:textStyle="bold" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_assigned_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:id="@+id/tvSubject2Faculty"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:text="@string/sched_subject_2_faculty"
+                        android:textColor="@color/text_secondary"
+                        android:textSize="@dimen/text_body" />
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_days_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <!-- Day circles: M(active) T(active) W(active) T(active) F(inactive) -->
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_sm"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_m"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_t"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_w"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_active">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_th"
+                                android:textColor="@color/sched_day_active_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                        <View android:layout_width="@dimen/spacing_sm" android:layout_height="0dp" />
+
+                        <FrameLayout
+                            android:layout_width="36dp"
+                            android:layout_height="36dp"
+                            android:background="@drawable/bg_sched_day_inactive">
+                            <com.google.android.material.textview.MaterialTextView
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_gravity="center"
+                                android:text="@string/sched_day_f"
+                                android:textColor="@color/sched_day_inactive_text"
+                                android:textSize="@dimen/text_body"
+                                android:textStyle="bold" />
+                        </FrameLayout>
+
+                    </LinearLayout>
+
+                    <com.google.android.material.textview.MaterialTextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_md"
+                        android:text="@string/sched_time_slot_label"
+                        android:textColor="@color/sched_label_text"
+                        android:textSize="@dimen/text_caption"
+                        android:textStyle="bold"
+                        android:letterSpacing="0.06" />
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/spacing_xs"
+                        android:gravity="center_vertical"
+                        android:orientation="horizontal">
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubject2Start"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sched_subject_2_start"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_body"
+                            android:textStyle="bold" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_marginStart="@dimen/spacing_lg"
+                            android:layout_marginEnd="@dimen/spacing_lg"
+                            android:text="@string/sched_to"
+                            android:textColor="@color/text_hint"
+                            android:textSize="@dimen/text_body" />
+
+                        <com.google.android.material.textview.MaterialTextView
+                            android:id="@+id/tvSubject2End"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/sched_subject_2_end"
+                            android:textColor="@color/text_primary"
+                            android:textSize="@dimen/text_body"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </com.google.android.material.card.MaterialCardView>
+
+        <!-- ===================================================== -->
+        <!-- POST SCHEDULE BUTTON — Full width purple               -->
+        <!-- ===================================================== -->
+        <com.google.android.material.button.MaterialButton
+            android:id="@+id/btnPostSchedule"
+            style="@style/Widget.Material3.Button"
+            android:layout_width="match_parent"
+            android:layout_height="56dp"
+            android:layout_marginTop="28dp"
+            android:text="@string/post_schedule_btn"
+            android:textColor="@color/sched_post_btn_text"
+            android:textSize="15sp"
+            android:textStyle="bold"
+            app:backgroundTint="@color/sched_post_btn_bg"
+            app:cornerRadius="16dp"
+            app:icon="@drawable/ic_play"
+            app:iconGravity="textStart"
+            app:iconSize="20dp"
+            app:iconTint="@color/sched_post_btn_text"
+            app:rippleColor="@color/purple_dark" />
+
+    </LinearLayout>
+
+</androidx.core.widget.NestedScrollView>

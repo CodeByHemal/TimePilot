@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layer-list xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- Dark background -->
+    <item android:drawable="@drawable/bg_notice_image" />
+    <!-- Architectural line pattern using vector -->
+    <item
+        android:gravity="center"
+        android:width="120dp"
+        android:height="80dp">
+        <vector
+            android:width="120dp"
+            android:height="80dp"
+            android:viewportWidth="120"
+            android:viewportHeight="80">
+            <!-- Diagonal lines suggesting architectural drafting -->
+            <path
+                android:strokeColor="#3D3556"
+                android:strokeWidth="0.8"
+                android:pathData="M0,80 L120,0" />
+            <path
+                android:strokeColor="#3D3556"
+                android:strokeWidth="0.8"
+                android:pathData="M0,60 L100,0" />
+            <path
+                android:strokeColor="#3D3556"
+                android:strokeWidth="0.8"
+                android:pathData="M20,80 L120,20" />
+            <!-- Purple accent lines -->
+            <path
+                android:strokeColor="#6C3CE1"
+                android:strokeWidth="1.2"
+                android:pathData="M30,70 L90,30" />
+            <path
+                android:strokeColor="#6C3CE1"
+                android:strokeWidth="1.2"
+                android:pathData="M40,55 L70,55" />
+            <path
+                android:strokeColor="#6C3CE1"
+                android:strokeWidth="1.2"
+                android:pathData="M50,65 L80,40" />
+            <!-- Small triangular shape (window/arch) -->
+            <path
+                android:strokeColor="#7C5DFA"
+                android:strokeWidth="1.0"
+                android:pathData="M55,45 L65,30 L75,45 Z" />
+            <!-- Arrow / compass indicator -->
+            <path
+                android:strokeColor="#6C3CE1"
+                android:strokeWidth="1.5"
+                android:pathData="M95,15 L100,10 L102,18" />
+            <!-- Dimension markers -->
+            <path
+                android:strokeColor="#4A3870"
+                android:strokeWidth="0.6"
+                android:pathData="M25,35 L85,35" />
+            <path
+                android:strokeColor="#4A3870"
+                android:strokeWidth="0.6"
+                android:pathData="M25,33 L25,37" />
+            <path
+                android:strokeColor="#4A3870"
+                android:strokeWidth="0.6"
+                android:pathData="M85,33 L85,37" />
+        </vector>
+    </item>
+</layer-list>

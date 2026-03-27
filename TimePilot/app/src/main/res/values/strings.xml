@@ -1,3 +1,312 @@
 <resources>
-    <string name="app_name">TimePilot</string>
+    <!-- Application Strings -->
+    <string name="app_name">Time Pilot</string>
+    <string name="welcome_message">Welcome back, Alex</string>
+    <string name="user_profile">User Profile</string>
+
+    <!-- Header Section -->
+    <string name="todays_label">Today\'s</string>
+    <string name="momentum_text">Momentum</string>
+
+    <!-- Schedule Section -->
+    <string name="todays_schedule">Today\'s Schedule</string>
+    <string name="view_calendar">View Calendar</string>
+    <string name="ongoing">ONGOING</string>
+    <string name="next">NEXT</string>
+
+    <!-- Class Details -->
+    <string name="class_time_1">10:00 - 11:30</string>
+    <string name="class_name_1">Data Structures</string>
+    <string name="location_1">Hall 4B</string>
+    <string name="location">Location</string>
+
+    <string name="class_time_2">13:30 - 15:00</string>
+    <string name="class_name_2">Operating Systems</string>
+    <string name="location_2">Lab 202</string>
+
+    <!-- Urgent Tasks Section -->
+    <string name="urgent_tasks">Urgent Tasks</string>
+
+    <!-- Task 1 -->
+    <string name="task_1_name">Algorithm Final Report</string>
+    <string name="task_1_progress">85%</string>
+    <string name="task_1_due">DUE IN 4 HOURS</string>
+
+    <!-- Task 2 -->
+    <string name="task_2_name">Physics Lab Prep</string>
+    <string name="task_2_progress">30%</string>
+    <string name="task_2_due">Due Tomorrow, 09:00</string>
+
+    <!-- Notices Section -->
+    <string name="recent_notices">Recent Notices</string>
+
+    <!-- Notice 1 -->
+    <string name="notice_1_title">Faculty of Engineering</string>
+    <string name="notice_1_time">2h ago</string>
+    <string name="notice_1_content">Mid-term results for CS-301 are now available on the portal. Plea...</string>
+    <string name="faculty">Faculty</string>
+
+    <!-- Notice 2 -->
+    <string name="notice_2_title">Campus Events</string>
+    <string name="notice_2_time">5h ago</string>
+    <string name="notice_2_content">The Scholarly Atelier exhibition will be held this Friday in the Mai...</string>
+    <string name="events">Events</string>
+
+    <!-- Navigation Items -->
+    <string name="nav_home">Home</string>
+    <string name="nav_tasks">Tasks</string>
+    <string name="nav_notices">Notices</string>
+    <string name="nav_timetable">Timetable</string>
+    <string name="nav_profile">Profile</string>
+
+    <!-- Common Labels -->
+    <string name="alert">Alert</string>
+    <string name="momentum">Momentum.</string>
+    <string name="scholarly_atelier">Scholarly Atelier</string>
+
+    <!-- ========== Task Board Page ========== -->
+
+    <!-- Hero Section -->
+    <string name="task_hero_title">Campus\nCompanion</string>
+    <string name="task_hero_subtitle">Elevate your velocity. Conquer the curriculum.</string>
+
+    <!-- Filter Chips -->
+    <string name="filter_high">High</string>
+    <string name="filter_medium">Medium</string>
+    <string name="filter_low">Low</string>
+
+    <!-- Task Card 1 — Java Assignment -->
+    <string name="critical_priority">CRITICAL PRIORITY</string>
+    <string name="task_board_1_date">Oct 15, 11:59 PM</string>
+    <string name="task_board_1_name">Java Assignment 3</string>
+    <string name="task_board_1_instructor">Dr. Smith • Advanced OOP</string>
+    <string name="completion_status">COMPLETION STATUS</string>
+    <string name="task_board_1_completion">75%</string>
+    <string name="grade_label">GRADE</string>
+    <string name="task_board_1_grade">A</string>
+    <string name="milestones_label">MILESTONES</string>
+    <string name="milestone_1">Initialize Maven project structure</string>
+    <string name="milestone_2">Implement Factory Pattern for UI widgets</string>
+    <string name="milestone_3">Unit testing for Data persistence</string>
+
+    <!-- Task Card 2 — DBMS Project -->
+    <string name="team_project">TEAM PROJECT</string>
+    <string name="task_board_2_name">DBMS Project</string>
+    <string name="task_board_2_instructor">Prof. Patel</string>
+    <string name="deadline_label">DEADLINE</string>
+    <string name="task_board_2_deadline">Oct 20</string>
+    <string name="priority_high">High</string>
+    <string name="project_health">Project Health</string>
+    <string name="task_board_2_health_grade">B+</string>
+    <string name="instructor_label">Instructor</string>
+
+    <!-- ========== Notices / Daily Briefing Page ========== -->
+
+    <!-- Hero Section -->
+    <string name="notices_hero_title">Daily\nBriefing</string>
+    <string name="notices_hero_subtitle">Your academic velocity today is high.\nReview the latest faculty directives and\nyour curated schedule.</string>
+
+    <!-- Filter Chips -->
+    <string name="filter_notices">Notices</string>
+    <string name="filter_timetable">Timetable</string>
+
+    <!-- Notice Card 1 — Faculty of Architecture -->
+    <string name="notice_faculty_name">Faculty of Architecture</string>
+    <string name="notice_faculty_time">2 HOURS AGO</string>
+    <string name="notice_faculty_text_1">The "Urban Metamorphosis"\nexhibition has been moved to the\nGrand Hall. Please ensure all physical\nmodels are transported by 4 PM\ntoday.</string>
+    <string name="notice_faculty_text_2">All student portfolios must be\ndigitized.</string>
+    <string name="chip_event">EVENT</string>
+    <string name="chip_urgent">URGENT</string>
+
+    <!-- Notice Card 2 — Registrar's Office -->
+    <string name="notice_registrar_name">Registrar\'s Office</string>
+    <string name="notice_registrar_time">5 HOURS AGO</string>
+    <string name="notice_registrar_text">System maintenance scheduled for\nthe Student Portal tonight from 00:00\nto 04:00 AM. Course registration will\nbe temporarily unavailable.</string>
+    <string name="more_options">More options</string>
+
+    <!-- ========== Timetable / Weekly Itinerary Page ========== -->
+
+    <!-- Top bar -->
+    <string name="the_scholarly_atelier">The Scholarly Atelier</string>
+
+    <!-- Hero Section -->
+    <string name="timetable_hero_title">Weekly\nItinerary</string>
+    <string name="timetable_hero_subtitle">Curating your academic path. Your\nschedule is synchronized across all\nscholarly departments.</string>
+
+    <!-- Day Selector -->
+    <string name="day_mon">MON</string>
+    <string name="day_tue">TUE</string>
+    <string name="day_wed">WED</string>
+    <string name="day_thu">THU</string>
+    <string name="day_fri">FRI</string>
+    <string name="date_12">12</string>
+    <string name="date_13">13</string>
+    <string name="date_14">14</string>
+    <string name="date_15">15</string>
+    <string name="date_16">16</string>
+
+    <!-- Class Card 1 — Advanced Epistemology & Logic -->
+    <string name="chip_core_module">CORE MODULE</string>
+    <string name="class_1_time">09:00 - 10:30 (90 min)</string>
+    <string name="class_1_name">Advanced Epistemology \u0026\nLogic</string>
+    <string name="class_1_instructor">Dr. Alistair Thorne</string>
+    <string name="class_1_location">Grand Atelier, Room 402</string>
+
+    <!-- Class Card 2 — Digital Renaissance -->
+    <string name="chip_elective">ELECTIVE</string>
+    <string name="class_2_time">11:00 - 12:30 (90 min)</string>
+    <string name="class_2_name">Digital Renaissance: Art \u0026\nCode</string>
+    <string name="class_2_instructor">Prof. Elena Moretti</string>
+    <string name="class_2_location">Media Lab B</string>
+
+    <!-- Recess -->
+    <string name="recess_label">SCHOLARLY RECESS • 1 HOUR</string>
+
+    <!-- Class Card 3 — Architectural Semiotics -->
+    <string name="chip_seminar">SEMINAR</string>
+    <string name="class_3_time">13:30 - 15:30 (120 min)</string>
+    <string name="class_3_name">Architectural Semiotics</string>
+    <string name="class_3_instructor">Dr. Julian Vane</string>
+    <string name="class_3_location">Westuing Hall</string>
+    <string name="notes_action">Notes</string>
+
+    <!-- ========== Faculty Dashboard ========== -->
+
+    <!-- Top Bar -->
+    <string name="faculty_brand">Scholarly Atelier</string>
+
+    <!-- Hero Section -->
+    <string name="faculty_hero_title">Faculty\nPortal</string>
+    <string name="faculty_hero_subtitle">Manage your academic atelier. Review task approvals, broadcast updates, and monitor scholar velocity.</string>
+
+    <!-- Velocity Metrics Card -->
+    <string name="velocity_metrics_label">VELOCITY METRICS</string>
+    <string name="student_completion">Student Completion</string>
+    <string name="completion_percentage">84</string>
+    <string name="student_completed">Student Completed</string>
+    <string name="subject_adv_logic">Advanced\nLogic</string>
+    <string name="subject_adv_logic_pct">92%</string>
+    <string name="subject_digital_ethics">Digital\nEthics</string>
+    <string name="subject_digital_ethics_pct">76%</string>
+    <string name="subject_ui_studio">UI\nStudio</string>
+    <string name="subject_ui_studio_pct">84%</string>
+
+    <!-- Pending Tasks Section -->
+    <string name="pending_tasks">Pending Tasks</string>
+    <string name="badge_3_new">3 NEW</string>
+    <string name="pending_task_1_name">Thesis Proposal Draft</string>
+    <string name="pending_task_1_student">Submitted by Alex Rivera</string>
+    <string name="pending_task_2_name">Lab Report 04</string>
+    <string name="pending_task_2_student">Submitted by Sarah Chen</string>
+    <string name="pending_task_3_name">Case Study Analysis</string>
+    <string name="pending_task_3_student">Submitted by Marcus Thorne</string>
+    <string name="view_all_approvals">View All Approvals</string>
+
+    <!-- Recent Broadcasts Section -->
+    <string name="recent_broadcasts">Recent Broadcasts</string>
+    <string name="broadcast_1_title">Midterm Update</string>
+    <string name="broadcast_1_time">2h ago</string>
+    <string name="broadcast_1_body">The midterm project guidelines have been updated in the resources folder. Please…</string>
+    <string name="broadcast_1_chip">All Classes</string>
+    <string name="broadcast_2_title">Lab Reschedule</string>
+    <string name="broadcast_2_time">Yesterday</string>
+    <string name="broadcast_2_body">Section B Lab is moved to the Digital Studio. Same time as scheduled.</string>
+    <string name="broadcast_2_chip">Section B</string>
+
+    <!-- Faculty Navigation -->
+    <string name="faculty_nav_home">Home</string>
+    <string name="faculty_nav_tasks">Tasks</string>
+    <string name="faculty_nav_notices">Notices</string>
+    <string name="faculty_nav_profile">Profile</string>
+
+    <!-- Student Home — Faculty redirect -->
+    <string name="open_faculty_portal">Faculty Portal</string>
+
+    <!-- ========== Faculty — Create New Task Page ========== -->
+    <string name="faculty_portal_label">FACULTY PORTAL</string>
+    <string name="create_task_title">Create New\nTask</string>
+    <string name="create_task_subtitle">Orchestrate your academic workflow and guide your students toward excellence.</string>
+    <string name="task_title_label">Task Title</string>
+    <string name="task_title_hint">e.g. Advanced Thermodynamics Research Proposal</string>
+    <string name="class_batch_label">Class / Batch</string>
+    <string name="class_batch_hint">B.Tech CS - Section A</string>
+    <string name="set_deadline_label">Set Deadline</string>
+    <string name="deadline_hint">mm/dd/yyyy</string>
+    <string name="priority_level_label">Priority Level</string>
+    <string name="priority_high_label">High</string>
+    <string name="priority_medium_label">Medium</string>
+    <string name="priority_low_label">Low</string>
+    <string name="subtask_builder_label">Subtask Builder</string>
+    <string name="subtask_added_badge">3 Added</string>
+    <string name="subtask_input_hint">Add a specific step or milestone…</string>
+    <string name="add_subtask">+ Add</string>
+    <string name="subtask_1">Literature review submission</string>
+    <string name="subtask_2">Data collection methodology</string>
+    <string name="subtask_3">Preliminary results presentation</string>
+    <string name="assign_task_btn">Assign Task to Batch</string>
+    <string name="go_back">Go back</string>
+
+    <!-- ========== Faculty — Broadcast New Notice Page ========== -->
+    <string name="faculty_comms_label">FACULTY COMMUNICATIONS</string>
+    <string name="broadcast_hero_line1">Broadcast</string>
+    <string name="broadcast_hero_line2">New Notice</string>
+    <string name="broadcast_message_label">Broadcast Message</string>
+    <string name="broadcast_message_hint">e.g., Deadline Extended – Java Assignment 3. The new submission date is Friday, 5:00 PM. Please check the portal for details.</string>
+    <string name="upload_attachment">Click to upload or drag attachment</string>
+    <string name="upload_file_types">PDF, JPG, or PNG up to 10MB</string>
+    <string name="target_audience_title">Target Audience</string>
+    <string name="academic_group_label">ACADEMIC GROUP</string>
+    <string name="academic_group_hint">Computer Science - Year 2</string>
+    <string name="urgent_broadcast_label">Urgent Broadcast</string>
+    <string name="impact_estimate_title">Impact Estimate</string>
+    <string name="recipients_count">142</string>
+    <string name="recipients_label">Recipients</string>
+    <string name="impact_description">Your message will be sent via Push Notification and Campus Email.</string>
+    <string name="broadcast_now_btn">Broadcast Now</string>
+    <string name="broadcast_legal">By broadcasting, you agree to the Campus Companion Faculty Guidelines for Communications.</string>
+
+    <!-- ========== Faculty — Schedule Builder Page ========== -->
+    <string name="admin_portal_label">ADMINISTRATIVE PORTAL</string>
+    <string name="schedule_hero_line1">Faculty\nSchedule</string>
+    <string name="schedule_hero_line2">Builder</string>
+    <string name="schedule_hero_subtitle">Design the academic rhythm for the upcoming semester. Set global durations and map out individual subject sessions with precision and scholarly intent.</string>
+
+    <!-- Global Parameters Card -->
+    <string name="global_parameters_title">Global Parameters</string>
+    <string name="semester_span_label">Semester Span</string>
+    <string name="semester_span_hint">e.g. Fall 2024</string>
+    <string name="daily_start_time_label">Daily Start Time</string>
+    <string name="daily_start_time_hint">08:00 AM</string>
+    <string name="daily_end_time_label">Daily End Time</string>
+    <string name="daily_end_time_hint">06:00 PM</string>
+    <string name="global_params_info">Setting these parameters helps automate conflict detection and optimize classroom allocation.</string>
+
+    <!-- Subject Roster Section -->
+    <string name="subject_roster_title">Subject\nRoster</string>
+    <string name="add_subject_btn">Add\nSubject</string>
+
+    <!-- Subject Card 1 -->
+    <string name="sched_subject_name_label">SUBJECT NAME</string>
+    <string name="sched_subject_1_name">Advanced Typography II</string>
+    <string name="sched_assigned_label">ASSIGNED FACULTY \u0026 ROOM</string>
+    <string name="sched_subject_1_faculty">Dr. Julian Vane</string>
+    <string name="sched_days_label">SCHEDULE DAYS</string>
+    <string name="sched_day_m">M</string>
+    <string name="sched_day_t">T</string>
+    <string name="sched_day_w">W</string>
+    <string name="sched_day_th">T</string>
+    <string name="sched_day_f">F</string>
+    <string name="sched_time_slot_label">TIME SLOT</string>
+    <string name="sched_subject_1_start">09:00 AM</string>
+    <string name="sched_to">to</string>
+    <string name="sched_subject_1_end">11:30 AM</string>
+
+    <!-- Subject Card 2 -->
+    <string name="sched_subject_2_name">Computational Aesthetics</string>
+    <string name="sched_subject_2_faculty">Prof. Elena Moretti</string>
+    <string name="sched_subject_2_start">02:00 PM</string>
+    <string name="sched_subject_2_end">04:00 PM</string>
+
+    <!-- Action Button -->
+    <string name="post_schedule_btn">Post Schedule</string>
 </resources>

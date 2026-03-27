@@ -3,7 +3,7 @@ plugins {
 }
 
 android {
-    namespace 'com.example.timepilot'
+    namespace = 'com.example.timepilot'
     compileSdk {
         version = release(36)
     }
@@ -23,6 +23,10 @@ android {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
+    }
+    buildFeatures{
+        viewBinding = true
+        dataBinding = true
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_11
