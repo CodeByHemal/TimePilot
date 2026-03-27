@@ -135,10 +135,12 @@ Inspired by a clean, card-driven UI (as shown in the design), the app emphasizes
 
 ## 🔒 Constraints & Considerations
 
-* Must remain **easy to use for all users**
-* Efficient handling of **multiple schedules and tasks**
-* Strong emphasis on **visual clarity and prioritization**
-* Support for **filtering and quick navigation**
+🧩 User-Friendly Design
+The application must be intuitive and easy to use, even for non-technical users.
+🔍 Flexible Filtering
+Should support filtering of schedules, tasks, and events based on date and category for better organization.
+🎯 Clear Visual Prioritization
+Must provide strong visual indicators (e.g., colors, labels, highlights) to distinguish between high, medium, and low priority items.
 
 ---
 
@@ -153,11 +155,14 @@ Inspired by a clean, card-driven UI (as shown in the design), the app emphasizes
 
 ## 📈 Future Enhancements
 
-* AI-based **smart task prioritization**
-* Push notifications & **intelligent reminders**
-* Calendar integration (Google Calendar, etc.)
-* **Performance analytics dashboard** for students
-
+🔔 Intelligent Reminders & Alerts
+Smart notifications for upcoming classes, deadlines, and pending tasks to improve time management.
+📅 Enhanced Calendar & Timeline View
+Visual timeline and calendar integration for better visibility of academic activities.
+📈 Productivity & Progress Tracking
+Analytics dashboard to track task completion rates, consistency, and performance trends.
+🔄 Real-Time Sync & Updates
+Instant updates for schedules, tasks, and notices across all devices.
 
 ## 📌 Conclusion
 
