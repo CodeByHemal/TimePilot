@@ -65,27 +65,6 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:id="@+id/heroSection"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="@dimen/spacing_sm"
-            android:orientation="vertical">
-
-            <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/tvFacultyHeroTitle"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:fontFamily="sans-serif-black"
-                android:text="@string/faculty_hero_title"
-                android:textColor="@color/text_primary"
-                android:textSize="32sp"
-                android:textStyle="bold"
-                android:lineSpacingExtra="-4dp" />
-
-
-        </LinearLayout>
-
         <!-- ===================================================== -->
         <!-- VELOCITY METRICS CARD — Purple gradient                -->
         <!-- ===================================================== -->
@@ -136,9 +115,9 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_marginStart="@dimen/spacing_md"
-                    android:text="@string/"
+                    android:text="Student"
                     android:textColor="@color/faculty_metrics_label"
-                    android:textSize="@dimen/text_caption"
+                    android:textSize="20sp"
                     android:textStyle="bold"
                     android:lineSpacingExtra="2dp" />
 
